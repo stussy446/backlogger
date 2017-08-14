@@ -10,6 +10,7 @@ genres = ["horror", "fantasy", "adventure", "science fiction"]
   Item.create(title: Faker::ElderScrolls.region, category: categories.sample, genre: genres.sample, length: 30)
 end
 
+
 10.times do
   UserItem.create(user: User.all.sample, item: Item.all.sample)
 end
