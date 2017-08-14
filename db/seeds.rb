@@ -1,6 +1,6 @@
 User.delete_all
 Item.delete_all
-UserItem.delete_all
+Log.delete_all
 
 categories = ["game", "book", "movie"]
 genres = ["horror", "fantasy", "adventure", "science fiction"]
@@ -12,6 +12,6 @@ end
 
 
 10.times do
-  UserItem.create(user: User.all.sample, item: Item.all.sample)
+  Log.create(user: User.all.sample, item: Item.all.sample)
 end
 

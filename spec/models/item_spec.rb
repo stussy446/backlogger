@@ -13,9 +13,9 @@ RSpec.describe Item, type: :model do
 
   it 'has many user items' do 
     item.save
-    expect(item.user_items.length).to eq(0)
-    item.user_items.create(user: example_user)
-    expect(item.user_items.length).to eq(1)
+    expect(item.logs.length).to eq(0)
+    item.logs.create(user: example_user)
+    expect(item.logs.length).to eq(1)
   end
 
   it 'has many users' do 
