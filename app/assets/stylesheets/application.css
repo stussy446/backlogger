@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+ /** {
+ 	border: 1px dotted red;
+ }*/
+
+ #items-list{
+ }
+
+ #log-form {
+
+ }
+
+ .global-item {	
+ 	margin: 5px;
+ }
