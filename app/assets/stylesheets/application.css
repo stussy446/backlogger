@@ -18,11 +18,9 @@
  	border: 1px dotted red;
  }*/
 
- #items-list{
- }
-
- #log-form {
-
+ #logout-btn{
+ 	margin-left: 5px;
+ 	display: inline-block;
  }
 
  .global-item {	
