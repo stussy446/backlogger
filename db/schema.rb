@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20170814204329) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_items", force: :cascade do |t|
+  create_table "logs", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "item_id", null: false
     t.boolean "complete", default: false

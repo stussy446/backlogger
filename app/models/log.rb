@@ -1,4 +1,4 @@
-class UserItem < ApplicationRecord
+class Log < ApplicationRecord
   validates :user_id, :item_id, presence: true
 
   belongs_to :user 

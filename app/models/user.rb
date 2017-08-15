@@ -4,6 +4,6 @@ class User < ApplicationRecord
   validates :email, :username, :password, :rank, presence: true
   validates :email, :username, uniqueness: true
 
-  has_many :user_items
-  has_many :items, through: :user_items
+  has_many :logs
+  has_many :items, through: :logs
 end
