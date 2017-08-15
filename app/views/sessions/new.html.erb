@@ -1,11 +1,5 @@
 <h1>Login Page</h1>
-<% if flash[:messages] %>
-	<ul>
-		<% flash[:messages].each do |message| %>
-			<li><%=message%></li>
-		<% end %>
-	</ul>
-<% end %>
+<%= render "/flash" %>
 
 <%= form_tag(sessions_path, method: "post") do %>
 	<%= label_tag(:username, "Username") %><br>

@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:id] = user.id
       flash[:messages] = ["Logged in! Hello #{user.username}!"]
-      redirect_to user_items_path(user)
+      redirect_to user_logs_path(user)
     else
       flash[:messages] = ["Invalid login credentials"]
       render :new
