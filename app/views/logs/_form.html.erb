@@ -1,0 +1,5 @@
+<%= form_tag("/users/#{user.id}/logs", method: "POST", id: "log-form") do %>
+	<%= hidden_field_tag 'user_id', user.id %>
+	<%= hidden_field_tag 'item_id', item.id %>
+	<%= submit_tag "Add to Log" %>
+<% end %>

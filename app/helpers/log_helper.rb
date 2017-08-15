@@ -14,13 +14,5 @@ module LogHelper
     categories
   end
 
-  
-  def print_item(item)
-    if item.category != "book"
-       "#{item.title} -- Genre: #{item.genre} -- Length: #{item.length} hours"
-    else
-       "#{item.title} -- Genre: #{item.genre} -- Length: #{item.length} pages"
-    end
-  end
 
 end
