@@ -1,7 +1,7 @@
 <h1>Items Index Page</h1>
 <% @items.each do |item| %>
 	<li><%=item.print_item %></li>
-	<% if session[:id] %>
+	<% if session[:id] && !@user.already_in_log(item) %>
 		<%= render partial: "/logs/form", locals: {user: @user, item: item} %>
 	<% end %>
 <% end %>

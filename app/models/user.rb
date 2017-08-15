@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :logs
   has_many :items, through: :logs
+
+  def already_in_log(item)
+    return true if items.include?(item)
+  end
 end
