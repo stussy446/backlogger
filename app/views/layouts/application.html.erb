@@ -9,14 +9,14 @@
   </head>
 
   <body>
-    <div>
+    <nav>
   	 <% if session[:id] %>
       <%= link_to "Go back to Logs", user_logs_path(find_user) %>
   	 	<%= form_tag("/sessions/#{session[:id]}", method: "DELETE", id: "logout-btn") do %>
   	 		<%= submit_tag("Logout") %>
   	 	<% end %>
       <% end %>
-    </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
