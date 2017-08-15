@@ -17,3 +17,7 @@ end
   Log.create(user: User.all.sample, item: Item.all.sample)
 end
 
+30.times do 
+  Log.create(user: User.first, item: Item.all.sample)
+end
+
