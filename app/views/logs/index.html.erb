@@ -4,20 +4,22 @@
 <h3>Games</h3>
 	<ul>
 	<% @games.each do |game| %>
-		<%= print_item(game) %><br>
+		<%= game.print_item %><br>
 	<% end %>
 	</ul>
 <h3>Movies</h3>
 	<ul>
 	<% @movies.each do |movie| %>
-		<%= print_item(movie) %><br>
+		<%= movie.print_item %><br>
 	<% end %>
 	</ul>
 <h3>Books</h3>
 	<ul>
 	<% @books.each do |book| %>
-		<%= print_item(book) %><br>
+		<%= book.print_item %><br>
 	<% end %>
 	</ul>
-	
+<footer>
+	<%= link_to "Choose From Already Created Items", items_path %>
+</footer>
 
