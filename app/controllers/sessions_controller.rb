@@ -16,6 +16,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy 
+    session.delete(:id)
+    flash[:messages] = ["Logout successful, have a nice day!"]
+    redirect_to root_path
   end
 
 end

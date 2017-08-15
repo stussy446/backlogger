@@ -9,6 +9,11 @@
   </head>
 
   <body>
+  	<% if session[:id] %>
+  		<%= form_tag("/sessions/#{session[:id]}", method: "DELETE") do %>
+  			<%= submit_tag("Logout") %>
+  		<% end %>
+  	<% end %>
     <%= yield %>
   </body>
 </html>
