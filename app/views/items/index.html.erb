@@ -1,7 +1,7 @@
 <h1>Items Index Page</h1>
 <ul id="items-list">
 <% @items.each do |item| %>
-		<br><li class="global-item"><%=item.print_item %>
+		<br><li class="global-item"><%=item.print_item %>--Created By: <%= item.creator.username %>
 		<% if session[:id] && !@user.already_in_log(item) %>
 			<%= render partial: "/logs/form", locals: {user: @user, item: item} %>
 		<% end %>

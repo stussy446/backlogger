@@ -1,0 +1,9 @@
+<h1>Custom Item Page</h1>
+<%= form_for @item do |f| %>
+	Title: <%= f.text_field :title %><br>
+	Genre: <%= f.text_field :genre %><br>
+	Length: <%= f.number_field :length %><br>
+	Category: <%= f.select :category, [["movie", "movie"],["game", "game"], ["book", "book"]] %><br><br>
+	<%= f.hidden_field :creator_id, :value => @user.id  %>
+	<%= f.submit "Create Custom Item" %>
+<% end %>

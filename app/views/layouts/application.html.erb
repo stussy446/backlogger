@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%= render "/flash" %>
     <nav>
   	 <% if session[:id] %>
       <%= link_to "Go back to Logs", user_logs_path(find_user), id:"user-log-link", class: "button" %>
