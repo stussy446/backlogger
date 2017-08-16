@@ -14,7 +14,9 @@
       <%= link_to "Go back to Logs", user_logs_path(find_user) %>
   	 	<%= form_tag("/sessions/#{session[:id]}", method: "DELETE", id: "logout-btn") do %>
   	 		<%= submit_tag("Logout") %>
-  	 	<% end %>
+  	 	 <% end %>
+      <% else %>
+        <%= link_to "Sign Up Here!", new_user_path %>
       <% end %>
     </nav>
     <%= yield %>
