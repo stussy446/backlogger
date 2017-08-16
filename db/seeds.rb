@@ -9,7 +9,7 @@ User.create(email: "steverector27@gmail.com", username: "stussy446", password: "
 
 50.times do 
   User.create(email: Faker::Internet.email, username: Faker::Internet.user_name, password: "123")
-  Item.create(title: Faker::Team.name, category: categories.sample, genre: genres.sample, length: 30)
+  Item.create(title: Faker::Team.name, category: categories.sample, genre: genres.sample, length: 30, creator_id: User.all.sample.id)
 end
 
 

@@ -1,8 +1,9 @@
 class Item < ApplicationRecord
-  validates :title, :category, presence: true
+  validates :title, :category, :creator_id, presence: true
 
   has_many :logs
   has_many :users, through: :logs
+  belongs_to :creator, class_name: "User"
 
   def print_item
     if category != "book"

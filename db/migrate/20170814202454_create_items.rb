@@ -5,6 +5,7 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.string :genre
       t.integer :length
       t.string :category, null: false 
+      t.integer :creator_id, null: false
       
       t.timestamps
     end
