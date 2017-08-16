@@ -12,7 +12,9 @@
     <%= render "/flash" %>
     <nav>
   	 <% if session[:id] %>
-      <%= link_to "Go back to Logs", user_logs_path(find_user), id:"user-log-link", class: "button" %>
+      <%= link_to "Go back to Your Logs", user_logs_path(find_user), id:"user-log-link", class: "button" %>
+      <%= link_to "Choose From Already Created Items", items_path, class: "button" %>
+      <%= link_to "Create a Custom Item", new_item_path, class: "button" %>
   	 	  <%= render '/sessions/delete' %>
       <% else %>
         <%= link_to "Sign Up Here!", new_user_path, id: "sign-up-link", class: "button" %>

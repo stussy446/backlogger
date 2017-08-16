@@ -14,8 +14,10 @@ class ItemsController < ApplicationController
   def create 
     @item = Item.new(item_params)
     if @item.save 
-      flash[:messages] = ["Custom Item Created!"]
-      redirect_to items_path
+      user = User.find(params[:item][:creator_id])
+      Log.create(user: user, item: @item)
+      flash[:messages] = ["Custom Item Created and logged!"]
+      redirect_to user_logs_path(user)
     else
       flash[:messages] = @item.errors.full_messages
       redirect_to new_item_path
