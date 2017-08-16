@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20170814204329) do
     t.string "genre"
     t.integer "length"
     t.string "category", null: false
+    t.integer "creator_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,6 +1,4 @@
 <h1><%= @user.username %>'s' Logs</h1>
-<%= render "/flash" %>
-
 <h3>Games</h3>
 	<ul>
 	<% @games.each do |game| %>
@@ -19,7 +17,4 @@
 		<%= book.print_item %><br>
 	<% end %>
 	</ul>
-<footer>
-	<%= link_to "Choose From Already Created Items", items_path %>
-</footer>
 
