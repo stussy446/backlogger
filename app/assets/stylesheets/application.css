@@ -26,3 +26,13 @@
  .global-item {	
  	margin: 5px;
  }
+
+ #sign-up-link {
+
+ }
+
+ .button {
+ 	margin-left: 10px;
+ 	padding-right: 10px;
+ 	border-right: 1px solid black;
+ }
