@@ -1,20 +1,20 @@
 <h1><%= @user.username %>'s' Logs</h1>
 <h3>Games</h3>
-	<ul>
-	<% @games.each do |game| %>
-		<%= game.print_item %><%= render partial: "edit", locals: {user: @user, log: game} %><br>
+	<ul class="no-bullet">
+		<li><% @games.each do |game| %>
+			<%= game.print_item %><%= render partial: "edit", locals: {user: @user, log: game} %></li><br>
 	<% end %>
 	</ul>
 <h3>Movies</h3>
-	<ul>
-	<% @movies.each do |movie| %>
-		<%= movie.print_item %><%= render partial: "edit", locals: {user: @user, log: movie} %><br>
+	<ul class="no-bullet">
+		<% @movies.each do |movie| %>
+			<li><%= movie.print_item %><%= render partial: "edit", locals: {user: @user, log: movie} %></li><br>
 	<% end %>
 	</ul>
 <h3>Books</h3>
-	<ul>
-	<% @books.each do |book| %>
-		<%= book.print_item %><%= render partial: "edit", locals: {user: @user, log: book} %><br>
+	<ul class="no-bullet">
+		<% @books.each do |book| %>
+			<li><%= book.print_item %><%= render partial: "edit", locals: {user: @user, log: book} %></li><br>
 	<% end %>
 	</ul>
 

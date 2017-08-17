@@ -2,7 +2,7 @@ class LogsController < ApplicationController
   include LogHelper
 
   def index 
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:id])
     @logs = @user.logs
     @categories = categorize(@logs)
     @games = @categories[0]
@@ -26,10 +26,16 @@ class LogsController < ApplicationController
   end
 
   def update 
-    @log = Log.find_by(item_id: params[:id])
+    @log = Log.where(item_id: params[:id], user_id: session[:id])
     @log.update(complete: true)
     flash[:messages] = ["log item completed!"]
-    redirect_to user_logs_path(@log.user.id)
+    redirect_to user_logs_complete_path(session[:id])
+  end
+
+  def complete
+    @user = User.find(params[:id])
+    @complete_logs = @user.logs.where(complete: true)
+    @complete_items = categorize(@complete_logs)[3]
   end
   
 end

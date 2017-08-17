@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
 
  get '/login', to: 'sessions#new', as: "login"
+ get 'users/:id/complete', to: 'logs#complete', as: "user_logs_complete"
 
 end
