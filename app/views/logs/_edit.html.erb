@@ -1,0 +1,3 @@
+<%= form_tag("/users/#{session[:id]}/logs/#{log.id}", method: "PUT", id: "edit-form") do %>
+	<%= submit_tag "Complete Log" %>
+<% end %>

@@ -1,17 +1,23 @@
 module LogHelper 
 
   def categorize(logs)
-    categories = [[],[],[]]
+    categories = [[],[],[],[]]
     logs.each do |log|
-      if log.item.category == "game"
+      if log.item.category == "game" && log.complete == false
         categories[0] << log.item
-      elsif log.item.category == "movie"
+      elsif log.item.category == "movie" && log.complete == false
        categories[1] << log.item
-      else
+      elsif log.item.category == "book" && log.complete == false
         categories[2] << log.item
+      else 
+        categories[3] << log.item
       end
     end
     categories
+  end
+
+  def complete?(log)
+    return true if log.complete == true
   end
 
 

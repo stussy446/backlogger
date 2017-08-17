@@ -36,3 +36,7 @@
  	padding-right: 10px;
  	border-right: 1px solid black;
  }
+
+ .no-bullet {
+ 	list-style: none;
+ }
