@@ -21,6 +21,16 @@ class LogsController < ApplicationController
     redirect_to items_path
    end
   end
+
+  def edit 
+  end
+
+  def update 
+    @log = Log.find_by(item_id: params[:id])
+    @log.update(complete: true)
+    flash[:messages] = ["log item completed!"]
+    redirect_to user_logs_path(@log.user.id)
+  end
   
 end
   

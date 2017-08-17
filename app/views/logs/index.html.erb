@@ -2,19 +2,19 @@
 <h3>Games</h3>
 	<ul>
 	<% @games.each do |game| %>
-		<%= game.print_item %><br>
+		<%= game.print_item %><%= render partial: "edit", locals: {user: @user, log: game} %><br>
 	<% end %>
 	</ul>
 <h3>Movies</h3>
 	<ul>
 	<% @movies.each do |movie| %>
-		<%= movie.print_item %><br>
+		<%= movie.print_item %><%= render partial: "edit", locals: {user: @user, log: movie} %><br>
 	<% end %>
 	</ul>
 <h3>Books</h3>
 	<ul>
 	<% @books.each do |book| %>
-		<%= book.print_item %><br>
+		<%= book.print_item %><%= render partial: "edit", locals: {user: @user, log: book} %><br>
 	<% end %>
 	</ul>
 

@@ -3,4 +3,8 @@ class Log < ApplicationRecord
 
   belongs_to :user 
   belongs_to :item 
+
+  def complete?
+    return true if complete == true
+  end
 end
