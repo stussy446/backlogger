@@ -1,10 +1,21 @@
 <h1>Items Index Page</h1>
 <ul id="items-list" class="no-bullet">
-<% @items.each do |item| %>
-		<br><li class="global-item"><%=item.print_item %>--Created By: <%= item.creator.username %>
-		<% if session[:id] && !@user.already_in_log(item) %>
-			<%= render partial: "/logs/form", locals: {user: @user, item: item} %>
-		<% end %>
-		</li>
-<% end %>
-</ul>
+<h3>Games</h3>
+	<ul class="no-bullet">
+		<li><% @games.each do |game| %>
+			<%= game.print_item %><%= render partial: "/logs/form", locals: {user: @user, item: game} %></li><br>
+	<% end %>
+	</ul>
+<h3>Movies</h3>
+	<ul class="no-bullet">
+		<% @movies.each do |movie| %>
+			<li><%= movie.print_item %><%= render partial: "/logs/form", locals: {user: @user, item: movie} %></li><br>
+	<% end %>
+	</ul>
+<h3>Books</h3>
+	<ul class="no-bullet">
+		<% @books.each do |book| %>
+			<li><%= book.print_item %><%= render partial: "/logs/form", locals: {user: @user, item: book} %></li><br>
+	<% end %>
+	</ul>
+
