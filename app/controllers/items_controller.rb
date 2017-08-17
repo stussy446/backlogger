@@ -1,9 +1,13 @@
 class ItemsController < ApplicationController 
   include ApplicationHelper
+  include ItemHelper
 
   def index 
     @user = User.find(session[:id])
-    @items = Item.all
+    @categories = categorize(Item.all)
+    @games = @categories[0]
+    @movies = @categories[1]
+    @books = @categories[2]
   end
 
   def new 
