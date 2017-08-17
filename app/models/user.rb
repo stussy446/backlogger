@@ -13,5 +13,9 @@ class User < ApplicationRecord
     return true if items.include?(item)
   end
 
+  def total_complete
+    logs.where(complete: true).length
+  end
+
 
 end
