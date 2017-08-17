@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
 
   def index 
     @user = User.find(session[:id])
-    @categories = categorize(Item.all)
+    @categories = categorize_items(Item.all)
     @games = @categories[0]
     @movies = @categories[1]
     @books = @categories[2]

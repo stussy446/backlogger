@@ -1,6 +1,6 @@
 module ItemHelper 
 
-def categorize(items)
+def categorize_items(items)
     categories = [[],[],[],[]]
     items.each do |item|
       if item.category == "game" 

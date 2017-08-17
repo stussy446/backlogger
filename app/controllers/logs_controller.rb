@@ -1,5 +1,6 @@
 class LogsController < ApplicationController 
   include LogHelper
+  include ItemHelper
 
   def index 
     @user = User.find(session[:id])
@@ -36,6 +37,10 @@ class LogsController < ApplicationController
     @user = User.find(params[:id])
     @complete_logs = @user.logs.where(complete: true)
     @complete_items = categorize(@complete_logs)[3]
+    @categories = categorize_items(@complete_items)
+    @games = @categories[0]
+    @movies = @categories[1]
+    @books = @categories[2]
   end
   
 end
