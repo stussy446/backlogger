@@ -11,11 +11,11 @@
 <body>
   <%= render "/flash" %>
   <% if session[:id] %>
-  <nav>
-    <%= link_to "Go back to Your Logs List", user_logs_path(find_user), id:"user-log-link", class: "button" %>
+  <nav class="container m-2 width: 120px">
+    <%= link_to "Go back to Your Logs List", user_logs_path(find_user), id:"user-log-link", class: "button ml-1" %>
     <%= link_to "Check Out Completed Logs", user_logs_complete_path(@user), class: "button" %>
     <%= link_to "Choose From Already Created Items", items_path, class: "button" %>
-    <%= link_to "Create a Custom Item", new_item_path, class: "button" %>
+    <%= link_to "Create An Item", new_item_path, class: "button" %>
     <%= render '/sessions/delete' %>
   </nav>
   <head>
