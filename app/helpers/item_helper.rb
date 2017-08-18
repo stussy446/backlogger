@@ -16,5 +16,10 @@ def categorize_items(items)
     categories
   end
 
+  def already_owned(user, item)
+    log = Log.where(user_id: user.id, item_id: item.id)
+    return true if log.length > 0
+  end
+
 
 end
