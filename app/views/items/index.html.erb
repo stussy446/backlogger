@@ -1,21 +1,39 @@
 <h1>Items Index Page</h1>
-<ul id="items-list" class="no-bullet">
 <h3>Games</h3>
-	<ul class="no-bullet">
-		<li><% @games.each do |game| %>
-			<%= game.print_item %><%= render partial: "/logs/form", locals: {user: @user, item: game} %></li><br>
-	<% end %>
-	</ul>
+  <ul class="no-bullet">
+    <% @games.each do |game| %>
+    <li><%= game.print_item %>
+      <% if !already_owned(@user, game) %>
+      <%= render partial: "/logs/form", locals: {user: @user,   item: game} %>
+      <% else %>
+      <p><b>Already Owned</b></p>
+      <% end %>
+      </li><br>
+    <% end %>
+  </ul>
 <h3>Movies</h3>
-	<ul class="no-bullet">
-		<% @movies.each do |movie| %>
-			<li><%= movie.print_item %><%= render partial: "/logs/form", locals: {user: @user, item: movie} %></li><br>
-	<% end %>
-	</ul>
-<h3>Books</h3>
-	<ul class="no-bullet">
-		<% @books.each do |book| %>
-			<li><%= book.print_item %><%= render partial: "/logs/form", locals: {user: @user, item: book} %></li><br>
-	<% end %>
-	</ul>
+  <ul class="no-bullet">
+    <% @movies.each do |movie| %>
+    <li><%= movie.print_item %>
+      <% if !already_owned(@user, movie) %>
+      <%= render partial: "/logs/form", locals: {user: @user, item: movie} %>
+      <% else %>
+      <p><b>Already Owned</b></p>
+    <% end %>
+    </li><br>
+      <% end %>
+  </ul>
+    <h3>Books</h3>
+  <ul class="no-bullet">
+    <% @books.each do |book| %>
+    <li><%= book.print_item %>
+      <% if !already_owned(@user, book) %>
+      <%= render partial: "/logs/form", locals: {user: @user, item: book} %>
+      <% else %>
+      <p><b>Already Owned</b></p>
+      <% end %>
+      </li><br>
+    <% end %>
+  </ul>
+
 
