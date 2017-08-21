@@ -1,8 +1,8 @@
-<h1>Items Index Page</h1>
-<h3>Games</h3>
-  <ul class="no-bullet">
+<h3 class="display-4 mb-3">Games</h3>
+<div class="container">
+  <ul class="no-bullet list-group w-75">
     <% @games.each do |game| %>
-    <li><%= game.print_item %>
+    <li id="global-item" class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= game.print_item %>
       <% if !already_owned(@user, game) %>
       <%= render partial: "/logs/form", locals: {user: @user,   item: game} %>
       <% else %>
@@ -11,10 +11,10 @@
       </li><br>
     <% end %>
   </ul>
-<h3>Movies</h3>
-  <ul class="no-bullet">
+<h3 class="display-4 mb-3">Movies</h3>
+  <ul class="no-bullet list-group w-75">
     <% @movies.each do |movie| %>
-    <li><%= movie.print_item %>
+    <li class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= movie.print_item %>
       <% if !already_owned(@user, movie) %>
       <%= render partial: "/logs/form", locals: {user: @user, item: movie} %>
       <% else %>
@@ -23,10 +23,10 @@
     </li><br>
       <% end %>
   </ul>
-    <h3>Books</h3>
-  <ul class="no-bullet">
+    <h3 class=class="display-4 mb-3">Books</h3>
+  <ul class="no-bullet list-group w-75">
     <% @books.each do |book| %>
-    <li><%= book.print_item %>
+    <li class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= book.print_item %>
       <% if !already_owned(@user, book) %>
       <%= render partial: "/logs/form", locals: {user: @user, item: book} %>
       <% else %>
@@ -35,5 +35,6 @@
       </li><br>
     <% end %>
   </ul>
+</div>
 
 
