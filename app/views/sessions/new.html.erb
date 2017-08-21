@@ -1,5 +1,6 @@
 <div class="text-sm-center m-5">
-	<h1 class="display-4">Login Page</h1>
+<h1 id="intro" class="display-3 m-2 text-sm-center mb-5">BACKLOGGER</h1>
+	<h2 class="display-4">Login Page</h2>
 	<%= form_tag(sessions_path, method: "post") do 	%>
 		<%= label_tag(:username, "Username", class: "	m-1") %><br>
 	 	<%= text_field_tag(:username) %><br>
@@ -9,4 +10,5 @@
 	
 	 	<%= submit_tag("Login", class: "m-2 	btn-primary") %>
 	<% end %>
+	<%= render "/welcome" %>
 </div>

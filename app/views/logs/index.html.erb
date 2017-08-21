@@ -1,20 +1,21 @@
-<h1><%= @user.username %>'s' Logs</h1>
-<h3>Games</h3>
-	<ul class="no-bullet">
-		<li><% @games.each do |game| %>
-			<%= game.print_item %><%= render partial: "edit", locals: {user: @user, log: game} %></li><br>
-	<% end %>
-	</ul>
-<h3>Movies</h3>
-	<ul class="no-bullet">
-		<% @movies.each do |movie| %>
-			<li><%= movie.print_item %><%= render partial: "edit", locals: {user: @user, log: movie} %></li><br>
-	<% end %>
-	</ul>
-<h3>Books</h3>
-	<ul class="no-bullet">
-		<% @books.each do |book| %>
-			<li><%= book.print_item %><%= render partial: "edit", locals: {user: @user, log: book} %></li><br>
-	<% end %>
-	</ul>
+<div class="container text-sm-center">
+	<h3 class=" mt-4 title display-4 mb-3">Games</h3>
+		<ul class="mx-auto no-bullet list-group w-75">
+		<% @games.each do |game| %>
+				<li class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= game.print_item %><%= render partial: "edit", locals: {user: @user, log: game} %></li><br>
+		<% end %>
+		</ul>
+	<h3 class="title display-4 mb-3">Movies</h3>
+		<ul class="mx-auto no-bullet list-group w-75">
+			<% @movies.each do |movie| %>
+				<li class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= movie.print_item %><%= render partial: "edit", locals: {user: @user, log: movie} %></li><br>
+		<% end %>
+		</ul>
+	<h3 class="title display-4 mb-3">Books</h3>
+		<ul class="mx-auto no-bullet list-group w-75">
+			<% @books.each do |book| %>
+				<li class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= book.print_item %><%= render partial: "edit", locals: {user: @user, log: book} %></li><br>
+		<% end %>
+		</ul>
+</div>
 
