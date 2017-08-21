@@ -1,3 +1,3 @@
-<%= form_tag("/sessions/#{session[:id]}", method: "DELETE", id: "logout-btn") do %>
-<%= submit_tag("Logout", class: "mt-2 btn-danger") %>
+<%= form_tag("/sessions/#{session[:id]}", method: "DELETE") do %>
+<%= submit_tag("Logout", class: "mt-5 btn-danger") %>
 <% end %>
