@@ -1,6 +1,6 @@
-<h3 class="display-4 mb-3">Games</h3>
-<div class="container">
-  <ul class="no-bullet list-group w-75">
+<div class="container text-sm-center">
+<h3 class=" mt-4 title display-4 mb-3">Games</h3>
+  <ul class="mx-auto no-bullet list-group w-75">
     <% @games.each do |game| %>
     <li id="global-item" class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= game.print_item %>
       <% if !already_owned(@user, game) %>
@@ -11,8 +11,8 @@
       </li><br>
     <% end %>
   </ul>
-<h3 class="display-4 mb-3">Movies</h3>
-  <ul class="no-bullet list-group w-75">
+<h3 class="title display-4 mb-3">Movies</h3>
+  <ul class="mx-auto no-bullet list-group w-75">
     <% @movies.each do |movie| %>
     <li class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= movie.print_item %>
       <% if !already_owned(@user, movie) %>
@@ -23,8 +23,8 @@
     </li><br>
       <% end %>
   </ul>
-    <h3 class=class="display-4 mb-3">Books</h3>
-  <ul class="no-bullet list-group w-75">
+    <h3 class=" title display-4 mb-3">Books</h3>
+  <ul class="mx-auto no-bullet list-group w-75">
     <% @books.each do |book| %>
     <li class="ml-3 border border rounded bg-dark text-white text-sm-center"><%= book.print_item %>
       <% if !already_owned(@user, book) %>
