@@ -1,9 +1,15 @@
-<h1>Custom Item Page</h1>
-<%= form_for @item do |f| %>
-	Title: <%= f.text_field :title %><br>
-	Genre: <%= f.text_field :genre %><br>
-	Length: <%= f.number_field :length %><br>
-	Category: <%= f.select :category, [["movie", "movie"],["game", "game"], ["book", "book"]] %><br><br>
-	<%= f.hidden_field :creator_id, :value => @user.id  %>
-	<%= f.submit "Create Custom Item" %>
-<% end %>
+<div class="text-sm-center m-5">
+	<h1 class="display-4">Custom Item Page</h1>
+	<%= form_for @item do |f| %>
+		<%= f.label :title, class: "m-1" %><br>
+		<%= f.text_field :title %><br>
+		<%= f.label :genre, class: "m-1" %><br>
+		<%= f.text_field :genre %><br>
+		<%= f.label :length, class: "m-1" %><br>
+		<%= f.number_field :length %><br>
+		<%= f.label :category, class: "m-1" %><br>
+		<%= f.select :category, [["movie", "movie"],["game", "game"], ["book", "book"]] %><br><br>
+		<%= f.hidden_field :creator_id, :value => @user.id  %>
+		<%= f.submit "Create Custom Item", class: "m-2 ml-3 btn-primary"  %>
+	<% end %>
+</div>
