@@ -8,21 +8,22 @@
   <%= javascript_include_tag 'application' %>
 </head>
 
-<body id="main-color" >
-  <%= render "/flash" %>
-  <% if session[:id] %>
+<body id="main-color">
+<%= render "/flash" %>
+<% if session[:id] %>
+  <%= render '/sessions/delete' %>
+  <h1 id="intro" class="display-3 m-2 text-sm-center">BACKLOGGER</h1>
   <nav class="fixed-top container mb-4 background-nav border-nav border-secondary rounded d-inline text-sm-center ml-4">
     <%= link_to "Go back to Your Logs List", user_logs_path(find_user), id:"user-log-link", class: "button ml-1" %>
     <%= link_to "Check Out Completed Logs", user_logs_complete_path(@user), class: "button" %>
     <%= link_to "Choose From Already Created Items", items_path, class: "button" %>
     <%= link_to "Create An Item", new_item_path, class: "ml-2"%>
   </nav>
-  <%= render '/sessions/delete' %>
   <head>
     <h5 class="text-sm-center"><%= find_user.username %> Total Logs Complete: <%= find_user.total_complete %></h5>
   </head>
   <% else %>
-  <nav class="container m-1 mb-4 background-nav border-nav border-secondary rounded d-inline">
+  <nav class="fixed-top container mb-4 background-nav border-nav border-secondary rounded d-inline text-sm-center ml-4">
     <%= link_to "Sign Up Here!", new_user_path, id: "sign-up-link", class: "mr-3"%>
     <%= link_to "Go to Login Page", root_path, id: "login-page-btn"%>
   </nav>
