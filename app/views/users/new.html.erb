@@ -1,7 +1,12 @@
-<h1>User Signup</h1>
-<%= form_for @user do |f| %>
-	Email:<%= f.text_field :email %><br>
-	Username: <%= f.text_field :username %><br>
-	Password: <%= f.password_field :password %><br>
-	<%= f.submit "Create Account" %>
-<% end %>
+<div class=" container text-sm-center mt-5">
+	<h1 class="display-4 mb-4">User Signup</h1>
+	<%= form_for @user do |f| %>
+		<%= f.label :email %><br>
+		<%= f.text_field :email, class: "mt-1" %><br>
+		<%= f.label :username %><br>
+		<%= f.text_field :username, class: "mt-1" %><br>
+		<%= f.label :password %><br>
+		<%= f.password_field :password, class: "mt-1" %><br>
+		<%= f.submit "Create Account", class: "btn-primary mt-4" %>
+	<% end %>
+</div>

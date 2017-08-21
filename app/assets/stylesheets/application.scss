@@ -10,13 +10,9 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
+ 
  */
 
- /** {
- 	border: 1px dotted red;
- }*/
 
  #logout-btn{
  	margin-left: 5px;
@@ -40,3 +36,7 @@
  .no-bullet {
  	list-style: none;
  }
+
+
+@import "bootstrap";
+@import "index";
