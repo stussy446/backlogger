@@ -1,0 +1,13 @@
+<div class=" container text-sm-center mt-5">
+	<h1 class="display-4 mb-4">User Signup</h1>
+	<%= form_for @user do |f| %>
+		<%= f.label :email, class: "mt-3 bold" %><br>
+		<%= f.text_field :email %><br>
+		<%= f.label :username, class: "mt-3 bold" %><br>
+		<%= f.text_field :username%><br>
+		<%= f.label :password, class: "mt-3 bold" %><br>
+		<%= f.password_field :password%><br>
+		<%= f.submit "Create Account", class: "btn-primary mt-4" %>
+	<% end %>
+	<%= render "/welcome" %>
+</div>

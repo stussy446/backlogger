@@ -1,0 +1,21 @@
+<div class="container text-sm-center">
+<h3 class="title mt-4 display-4 mb-3">Games</h3>
+	<ul class="mx-auto no-bullet list-group w-75">
+		<% @games.each do |game| %>
+			<li><%= game.print_item %></li><br>
+	<% end %>
+	</ul>
+<h3 class="title display-4 mb-3">Movies</h3>
+	<ul class="mx-auto no-bullet list-group w-75">
+		<% @movies.each do |movie| %>
+			<li><%= movie.print_item %></li><br>
+	<% end %>
+	</ul>
+<h3 class="title display-4 mb-3">Books</h3>
+	<ul class="mx-auto no-bullet list-group w-75">
+		<% @books.each do |book| %>
+			<li><%= book.print_item %></li><br>
+	<% end %>
+	</ul>
+<div>
+
